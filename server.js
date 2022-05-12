@@ -7,6 +7,8 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
+const seed = require('./models/seed')
+const Data = require('./models/schema')
 //___________________
 //Port
 //___________________
@@ -50,9 +52,48 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
+
+// ----------- GET ROUTES ----------- // 
+
+app.get('/seed', (req, res) => {
+  Data.create(seed, (err, Data) => {
+    console.log('SEEDED DATA PLEASE COMMENT OUT GET ROUTE')
+  })
+  res.redirect('/')
+})
+
+
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  Data.find({}, (err, display) => {
+    res.render('index.ejs', 
+    { items: display })
+  })
 });
+
+app.get('/show', (req, res) => {
+  res.send('This will be the collections page')
+})
+
+app.get('/about', (req, res) => {
+  res.send('this will be the about page')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //___________________
 //Listener
