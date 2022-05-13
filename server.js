@@ -96,22 +96,17 @@ app.post('/', (req, res) => {
 })
 
 // ------- Edit Route ------- // 
-
 app.get('/:id/edit', (req, res) =>{
   Data.findById(req.params.id, (err, edit) =>{
     res.render('edit.ejs',
     {items: edit})
   })
 })
-
-app.post('/', (req, res) =>{
-  Data.create(req.body, (err, edit) =>{
+app.put('/:id', (req, res) =>{
+  Data.findByIdAndUpdate(req.params.id, req.body, (err, items) =>{
     res.redirect('/')
   })
 })
-
-
-
 
 
 //___________________
