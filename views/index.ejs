@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>Hello World</h1>
-    
+    <%for(let i = 0; i < items.length; i++){ %>
+        <a href="/<%=items[i]._id%>"> 
+        <img src= <%=items[i].img%> width=500px height=500px alt="img"/> </a>
+        <h1><%=items[i].about%>
+        <%=items[i].price%> </h1>
+   <% } %>
 </body>
 </html>

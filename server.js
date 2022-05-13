@@ -53,13 +53,21 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 //localhost:3000
 
-// ----------- GET ROUTES ----------- // 
+// ----------- seed route ----------- // 
 
-app.get('/seed', (req, res) => {
-  Data.create(seed, (err, Data) => {
-    console.log('SEEDED DATA PLEASE COMMENT OUT GET ROUTE')
+// app.get('/seed', (req, res) => {
+//   Data.create(seed, (err, Data) => {
+//     console.log('SEEDED DATA PLEASE COMMENT OUT GET ROUTE')
+//   })
+//   res.redirect('/')
+// })
+
+// ----------- get routes ----------- // 
+app.get('/:id', (req, res) => {
+  Data.findById(req.params.id, (error, view) =>{
+    res.render('show.ejs',
+    { items: view })
   })
-  res.redirect('/')
 })
 
 
@@ -68,11 +76,8 @@ app.get('/' , (req, res) => {
     res.render('index.ejs', 
     { items: display })
   })
-});
-
-app.get('/show', (req, res) => {
-  res.send('This will be the collections page')
 })
+
 
 app.get('/about', (req, res) => {
   res.send('this will be the about page')
