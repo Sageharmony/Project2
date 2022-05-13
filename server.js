@@ -103,11 +103,18 @@ app.get('/:id/edit', (req, res) =>{
   })
 })
 app.put('/:id', (req, res) =>{
-  Data.findByIdAndUpdate(req.params.id, req.body, (err, items) =>{
+  Data.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, items) =>{
     res.redirect('/')
   })
 })
 
+// ------- Delete Route ------- // 
+
+app.delete('/:id', (req, res) =>{
+  Data.findByIdAndDelete(req.params.id, (err, deleteItem) =>{
+    res.redirect('/')
+  })
+})
 
 //___________________
 //Listener
