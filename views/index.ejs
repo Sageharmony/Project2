@@ -10,9 +10,11 @@
     <h1>Hello World</h1>
     <%for(let i = 0; i < items.length; i++){ %>
         <a href="/<%=items[i]._id%>"> 
+        <h1><%=items[i].title%></h1>
         <img src= <%=items[i].img%> width=500px height=500px alt="img"/> </a>
         <h1><%=items[i].about%>
         <%=items[i].price%> </h1>
+        <a href="/<%=items[i].id; %>/edit">Edit</a>
    <% } %>
 </body>
 </html>

@@ -62,15 +62,21 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //   res.redirect('/')
 // })
 
+
 // ----------- get routes ----------- // 
+// new route // 
+app.get('/new', (req, res) =>{
+  res.render('new.ejs')
+})
+
+// show route // 
 app.get('/:id', (req, res) => {
   Data.findById(req.params.id, (error, view) =>{
     res.render('show.ejs',
     { items: view })
   })
 })
-
-
+// homepage route // 
 app.get('/' , (req, res) => {
   Data.find({}, (err, display) => {
     res.render('index.ejs', 
@@ -78,23 +84,31 @@ app.get('/' , (req, res) => {
   })
 })
 
-
+// this will be the about page // 
 app.get('/about', (req, res) => {
   res.send('this will be the about page')
 })
 
+app.post('/', (req, res) => {
+  Data.create(req.body, (err, newPost) => {
+    res.redirect('/')
+  })
+})
 
+// ------- Edit Route ------- // 
 
+app.get('/:id/edit', (req, res) =>{
+  Data.findById(req.params.id, (err, edit) =>{
+    res.render('edit.ejs',
+    {items: edit})
+  })
+})
 
-
-
-
-
-
-
-
-
-
+app.post('/', (req, res) =>{
+  Data.create(req.body, (err, edit) =>{
+    res.redirect('/')
+  })
+})
 
 
 
