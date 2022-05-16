@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+
+#body {
+background-image: url("img/body2.png");
+background-size: 100%;
+background-repeat: no-repeat;
+ display: flex;
+ flex-direction: column;
+ font-family: 'Bebas Neue', cursive;
+}
+p{
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.heading{
+    align-self: center;
+    text-align: center;
+    background-image: url("https://www.wallpaperdecor.com.au/wp-content/uploads/2014/01/Grey-Watercolour.jpg");
+}
+.carousel-item{
+    width: 8em;
+    height: 40em;
+    padding: 0 5%;
+    margin-top: 2em;
+}
+nav{
+    background-color: rgb(255, 255, 255);
+    background-position: 100% 10%;
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    margin-top: -3em;
+}
+
+.navbar-brand{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    font-family: 'Roboto Flex', sans-serif;
+}
+#navW{
+    padding: .5em;
+}
+#navW:hover{
+    color: crimson;
+}
+#title{
+    color: rgb(15, 15, 15);
+
+     margin-left: 1em;
+    margin-top: .7;
+}
+
+#about{
+    padding: 5em;
+}
+
+#collectionName{
+    text-decoration: underline;
+    color: black;
+    text-align: center;
+}
+
+#collectionName:hover{
+    color: crimson;
+}
+
+#collectionsBox{
+    display: flex;
+    justify-content: space-around;
+}
+
+#collections{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 30em;
+    width: 12em; 
+    background-image: url("./img/blueb.jpeg");
+    background-size: cover;
+}
+#collectionImg{
+    width: 10em;
+    height: 10em;
+}
+
+#background{
+    background-image: url("https://i.etsystatic.com/9138203/r/il/30b3ec/1923221764/il_570xN.1923221764_8mfg.jpg");
+    background-size: contain;
+    height: 44em;
+}
+
+.carousel-control-next{
+    margin-right: -4em;
+}
+.carousel-control-prev{
+    margin-left: -4em;
+}
+
+
+#quote{
+    font-family: 'Roboto Flex', sans-serif;
+    padding: 4em;
+    text-align: center;
+}
+
+#footer{
+    display: flex;
+    justify-content: center;
+}
+
+#footerWords{
+    margin-left: 1.5em;
+}

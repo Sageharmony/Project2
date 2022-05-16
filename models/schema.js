@@ -1,13 +1,10 @@
 const mongoose = require('mongoose')
-const schema = new mongoose.Schema({
-    title: String,
-    img: String,
-    about: String,
-    location: String,
-    inspiration: String,
-    price: Number
+const Schema = mongoose.Schema
+const collectionSchema = new Schema({
+    name: String,
+    value: { title: String, img: String, about: String, location: String, inspiration: String, price: Number }    
 })
 
-const verify = mongoose.model('Data', schema)
+const Export = mongoose.model('Export', collectionSchema);
 
-module.exports = verify;
+module.exports = Export;
