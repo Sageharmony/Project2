@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script src="/jquery/jquery.js"></script>
-   <link rel="stylesheet" href="app.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-</head>
+  <%- include('../partials/head.ejs') %>
 <body id="body">
   <div class="heading">
     <img src="img/logo1.png" height="300px" width="300px"/>
@@ -15,10 +8,10 @@
   <nav class="sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-          <h5 id="navW"> ◇ Portfolio ◇ </h5>
-          <h5 id="navW"> ◇ Collaborations ◇ </h5>
-          <h5 id="navW"> ◇ Custom Works ◇ </h5>
-          <h5 id="navW"> ◇ Let's Get in Touch! ◇ </h5>
+          <a  id="navW" href="./#"> ◇ Portfolio ◇ </h5>
+          <a id="navW" href="/collab"> ◇ Collaborations ◇</a>
+          <a id="navW" href="/custom"> ◇ Custom Works ◇ </a>
+          <a id="navW" href="/contact"> ◇ Let's Get in Touch! ◇ </a>
         </a>
     </div>
   </nav>
@@ -27,13 +20,13 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
    <div class="carousel-inner">
      <div class=" carousel-item active">
-       <img src="https://sammlung.staedelmuseum.de/images/126141/robert-mapplethorpe-white-gauze-stf3970--thumb-xl.jpg" class="d-block w-100" alt="...">
+      <img  id="cImg" src="https://i.imgur.com/CXqJgjF.jpg" alt="...">
      </div>
      <div class="carousel-item">
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS49e7DiPzZRxXyA1VvF0tdK8m1toHA3G_qA2DiwD4sRb4PjKi7FbI_QX-TpM9PCEihFFc&usqp=CAU " class="d-block w-100" alt="...">
+       <img  id="cImg" src="https://i.imgur.com/dInMLmb.jpg" alt="...">
      </div>
      <div class="carousel-item">
-       <img src="https://i.guim.co.uk/img/media/2de3631e1a5c5e5031f782c3700a09d040ade999/0_0_4200_4334/master/4200.jpg?width=700&quality=85&auto=format&fit=max&s=faf4e261f04812babc28654baa019507" class="d-block w-100" alt="...">
+       <img id="cImg" src="https://i.imgur.com/KhHRsJE.jpg" alt="...">
      </div>
    </div>
    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -51,36 +44,29 @@
   <p>ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ex unde temporibus deserunt modi ea pariatur, voluptate excepturi itaque est officiis cupiditate, odit dignissimos rerum corporis. Illo quia deleniti id. ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, molestiae vero. Ipsa voluptatibus sit ipsum. Architecto assumenda aliquid beatae et dolore, culpa ullam! Dolore veritatis sed officia distinctio nam voluptatibus! ipsum Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe rerum perferendis voluptatum! Atque commodi, libero sint suscipit culpa labore. Ex fugiat praesentium vel minus corporis. Voluptatibus ipsum amet deserunt recusandae!</p>
 </div>
 <div id="collectionsBox">
- <%for(let i = 0; i < items.length; i++){ %>
-  <div id="collections">
-   <a href="/<%=items[i]._id%>">
-   <h1 id="collectionName"><%=items[i].name%></h1>
+     <a id="collectionName-1" href="/shadow"> Shadow <br/> Work </h5>
+      <a id="collectionName-2" href="/nature">Nature <br/> Series</a>
+      <a id="collectionName-3" href="/blackandwhite">Black <br/> & <br/> White</a>
+      <a id="collectionName-4" href="/film"> Real <br/>People</a>
   </div>
-</a>
-   <% } %>
-  </div>
-
 <div id="quote">
 <h2> Vision is the art of seeing what is invisible to others.</h2>
 <h3> - Jonathan Swift</h3>
 </div>
-
-<div id="about"> 
-
-</div>
 <div id="footerWords">
   <h1>Follow My Progress: </h1>
 </div>
-<footer id="footer">
+<div id="insta">
   <a href="https://www.instagram.com/gray.colored.lenses/">
     <img src="https://iso.500px.com/wp-content/uploads/2019/08/A-web.jpg" width="300px" height="300px"/> 
     <img src="https://www.ignant.com/wp-content/uploads/2018/12/artofwaiting-pre-1-1440x1440.jpg" width="300px" height="300px"/>
     <img src="https://i.pinimg.com/originals/e8/ed/e2/e8ede25f584e09a7c33283eeaafb4509.jpg" width="300px" height="300px"/>
     <img src="https://www.thephotoargus.com/wp-content/uploads/2019/08/fineartphotography01.jpg" width="300px" height="300px"/>
   </a>
+</div>
+<footer id="footer">
+<h4 id=""> Site Designed and Built by Sage Kolpin.</h4>
 </footer>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

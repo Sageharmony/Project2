@@ -24,7 +24,16 @@ p{
     height: 40em;
     padding: 0 5%;
     margin-top: 2em;
+    object-fit: fill;
+   
 }
+
+#cImg{
+    width: 100%;
+    height: 40em;
+    object-fit: contain;
+}
+
 nav{
     background-color: rgb(255, 255, 255);
     background-position: 100% 10%;
@@ -37,12 +46,16 @@ nav{
 
 .navbar-brand{
     display: flex;
-    margin: auto;
     justify-content: center;
     font-family: 'Roboto Flex', sans-serif;
+    
 }
 #navW{
+   margin-left: 8em;
     padding: .5em;
+    text-decoration: none;
+    color:rgb(15, 15, 15);
+    font-size: large;
 }
 #navW:hover{
     color: crimson;
@@ -55,34 +68,81 @@ nav{
 }
 
 #about{
-    padding: 5em;
+    padding: 3em;
 }
 
-#collectionName{
+#collectionName-1{
     text-decoration: underline;
     color: black;
     text-align: center;
+    font-size: 3em;
+    width: 6em;
+    height: 10em;
+    background-image: url("img/candlebw.png");
+    background-size: cover;
+    background-position: center;
+}
+#collectionName-2{
+    text-decoration: underline;
+    color: black;
+    text-align: center;
+    font-size: 3em;
+    width: 6em;
+    height: 10em;
+    background-image: url("img/carosel1bw.png");
+    background-size: cover;
+}
+#collectionName-3{
+    text-decoration: underline;
+    color: black;
+    text-align: center;
+    font-size: 3em;
+    width: 6em;
+    height: 10em;
+    background-image: url("img/bwbutterfly.png");
+    background-size: cover;
+}
+#collectionName-4{
+    text-decoration: underline;
+    color: black;
+    text-align: center;
+    font-size: 3em;
+    width: 6em;
+    height: 10em;
+    background-image: url("img/jayabw.png");
+    background-size: cover;
+    background-position: center;
 }
 
-#collectionName:hover{
+#collectionName-1:hover{
     color: crimson;
+    background-image: url("img/candle.png");
+    background-size: cover;
+    background-position: center;
 }
-
+#collectionName-2:hover{
+    color: crimson;
+    background-image: url("img/carosel1.JPG");
+    background-size: cover;
+}
+#collectionName-3:hover{
+    color: crimson;
+    background-image: url("img/butterfly.JPG");
+    background-size: cover;
+}
+#collectionName-4:hover{
+    color: crimson;
+    background-image: url("img/jaya.JPG");
+    background-size: cover;
+    background-position: center;
+}
 #collectionsBox{
     display: flex;
     justify-content: space-around;
+    padding: 5em;
+    
 }
 
-#collections{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 30em;
-    width: 12em; 
-    background-image: url("./img/blueb.jpeg");
-    background-size: cover;
-}
 #collectionImg{
     width: 10em;
     height: 10em;
@@ -106,13 +166,83 @@ nav{
     font-family: 'Roboto Flex', sans-serif;
     padding: 4em;
     text-align: center;
+    animation-name: fadein;
+    animation-delay: 1s;
 }
 
-#footer{
+#insta{
     display: flex;
     justify-content: center;
+}
+#footer{
+    margin-top: .2em;
+    background-color: rgb(176, 176, 176);
+}
+#me{
+    padding: 1em;
+    
 }
 
 #footerWords{
     margin-left: 1.5em;
+}
+
+#toH{
+    font-family: 'Bebas Neue', cursive;
+    padding: 2em;
+}
+#navC{
+    padding: 1em;
+    margin-left: -7em;
+    margin-top: 2em;
+}
+
+.info{
+    width: 40%;
+    margin: auto;
+    margin-bottom: 4em;
+    padding: 1em;
+
+
+}
+.mb-3{
+    width: 60%;
+    margin: auto;
+}
+
+.form{
+    margin-top: 7em;
+}
+#photoB:hover{
+    box-shadow: 3px 3px darkgreen;
+}
+
+#photoB{
+    padding: 2em;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10em;
+    box-shadow: 1px 1px darkgreen;
+}
+
+#bar{
+background-color: rgb(255, 255, 255);
+font-family: 'Bebas Neue', cursive;
+margin: 1em;
+padding: 1em;
+width: 9em;
+text-shadow: none;
+}
+
+#collab{
+    background-image: url("./img/bodyC.png");
+    background-size: cover;
+}
+
+#custom{
+    background-image: url("./img/carosel1.JPG");
+    background-size: cover;
+    margin: auto;
+    width: 50em;
+    height: 60em;
 }

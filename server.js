@@ -23,15 +23,44 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 // app.get('/seed', (req, res) => {
 //   Data.create(seed, (err, Data) => {
-//     console.log('SEEDED DATA PLEASE COMMENT OUT GET ROUTE')
+//     console.log('SEEDED DATA PLEASE COMMENT OUT ROUTE')
 //   })
 // })
+
 app.get('/new', (req, res) =>{
   res.render('new.ejs')
 })
 
+app.get('/collab', (req, res) => {
+  res.render('collab.ejs')
+})
 
+app.get('/custom', (req, res) => {
+  res.render('custom.ejs')
+})
 
+app.get('/contact', (req, res) => {
+  res.render('contact.ejs')
+})
+app.get('/contact', (req, res) => {
+  res.render('about.ejs')
+})
+app.get('/shadow', (req, res) => {
+  Data.find({type: "shadow"}, (err, list) =>{
+    res.render('shadow.ejs',
+    {list: list})
+  })
+})
+
+app.get('/nature', (req, res) => {
+  res.render('nature.ejs')
+})
+app.get('/blackandwhite', (req, res) => {
+  res.render('bw.ejs')
+})
+app.get('/film', (req, res) => {
+  res.render('mm.ejs')
+})
 app.post('/', (req, res) => {
   Data.create(req.body, (err, newPost) => {
     res.redirect('/')
@@ -40,13 +69,20 @@ app.post('/', (req, res) => {
  
   // show route //
 
-
-app.get('/:id', (req, res) => {
-  Data.findById(req.params.id, (error, view) =>{
+app.get('/:id', (req, res) =>{
+  Data.findById(req.params.id, (err, show) =>{
     res.render('show.ejs',
-    { items: view })
+    {collect: show})
   })
 })
+
+app.get('/' , (req, res) => {
+  Data.find({}, (err, display) => {
+    res.render('index.ejs',
+    { items: display })
+  })
+})
+
 
 app.get('/:id/edit', (req, res) =>{
   Data.findById(req.params.id, (err, edit) =>{
@@ -60,12 +96,7 @@ app.put('/:id', (req, res) =>{
   })
 })
 
-app.get('/' , (req, res) => {
-  Data.find({}, (err, display) => {
-    res.render('index.ejs',
-    { items: display })
-  })
-})
+
 app.get('/:id', (req, res) => {
   Data.findById(req.params.id, (error, view) =>{
     res.render('show.ejs',
@@ -81,6 +112,8 @@ app.delete('/:id', (req, res)=>{
 
 
 
+
+// db.dropDatabase()
 
 app.listen(PORT, () => 
 console.log( 'Listening on port:', PORT));
