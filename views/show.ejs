@@ -3,6 +3,10 @@
     <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/nav.ejs') %>
-    <%=collect.type%>
+
+    <% if(collected.title && collected.about){ %>
+    <h1><%=collected.title%></h1>
+    <h1><%=collected.about%></h1>
+    <% } %>
 </body>
 </html>

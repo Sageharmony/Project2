@@ -113,14 +113,6 @@ app.post('/', (req, res) => {
   })
 })
  
-  // show route //
-
-app.get('/:_id', (req, res) =>{
-  Data.findById(req.params.id, (err, show) =>{
-    res.render('show.ejs',
-    {collect: show})
-  })
-})
 
 
 
@@ -138,10 +130,15 @@ app.put('/:id', (req, res) =>{
 })
 
 
+
 app.get('/:id', (req, res) => {
-  Data.findById(req.params.id, (error, view) =>{
-    res.render('show.ejs',
-    { items: view })
+  Data.findById(req.params.id, (error, list) => {
+      res.render(
+          'show.ejs',
+          {
+              collected:list
+          }
+      )
   })
 })
 
