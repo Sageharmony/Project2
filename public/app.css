@@ -89,8 +89,9 @@ nav{
     font-size: 3em;
     width: 6em;
     height: 10em;
-    background-image: url("img/carosel1bw.png");
+    background-image: url("img/bwflower1.png");
     background-size: cover;
+    background-position: center;
 }
 #collectionName-3{
     text-decoration: underline;
@@ -101,6 +102,7 @@ nav{
     height: 10em;
     background-image: url("img/bwbutterfly.png");
     background-size: cover;
+    background-position: center;
 }
 #collectionName-4{
     text-decoration: underline;
@@ -122,13 +124,15 @@ nav{
 }
 #collectionName-2:hover{
     color: crimson;
-    background-image: url("img/carosel1.JPG");
+    background-image: url("img/whiteFlower.jpg");
     background-size: cover;
+    background-position: center;
 }
 #collectionName-3:hover{
     color: crimson;
     background-image: url("img/butterfly.JPG");
     background-size: cover;
+    background-position: center;
 }
 #collectionName-4:hover{
     color: crimson;
@@ -168,23 +172,29 @@ nav{
     text-align: center;
     animation-name: fadein;
     animation-delay: 1s;
+    background-image: url("/img/purple.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #insta{
     display: flex;
     justify-content: center;
+    margin-bottom: 1em;
+  
 }
 #footer{
     margin-top: .2em;
-    background-color: rgb(176, 176, 176);
+    background-color: rgb(77, 77, 77);
 }
 #me{
     padding: 1em;
-    
+    color: azure;
 }
 
 #footerWords{
-    margin-left: 1.5em;
+    margin-left: 5em;
 }
 
 #toH{
@@ -246,3 +256,32 @@ text-shadow: none;
     width: 50em;
     height: 60em;
 }
+#shadowBody{
+    background-image: url("img/black.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#titleShadow{
+    font-family: 'Bebas Neue', cursive;
+}
+#shadowHead{
+    margin-left: 3em;
+    margin-top: 3em;
+    width: 20em;
+}
+.shadowImg{
+   width: 20em;
+   height: 25em;
+   object-fit: cover;
+}
+.container1{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+#info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
