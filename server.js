@@ -89,14 +89,24 @@ app.get('/shadow', (req, res) => {
 })
 
 app.get('/nature', (req, res) => {
-  res.render('nature.ejs')
+  Data.find({type: "Nature"}, (err, list) =>{
+    res.render('nature.ejs',
+    {list: list})
+  })
 })
 app.get('/blackandwhite', (req, res) => {
-  res.render('bw.ejs')
+  Data.find({type: "Black and White"}, (err, list) =>{
+    res.render('bw.ejs',
+    {list: list})
+  })
 })
 app.get('/film', (req, res) => {
-  res.render('mm.ejs')
+  Data.find({type: "Real"}, (err, list) =>{
+    res.render('mm.ejs',
+    {list: list})
+  })
 })
+
 app.post('/', (req, res) => {
   Data.create(req.body, (err, newPost) => {
     res.redirect('/')
@@ -105,7 +115,7 @@ app.post('/', (req, res) => {
  
   // show route //
 
-app.get('/:id', (req, res) =>{
+app.get('/:_id', (req, res) =>{
   Data.findById(req.params.id, (err, show) =>{
     res.render('show.ejs',
     {collect: show})
@@ -140,8 +150,6 @@ app.delete('/:id', (req, res)=>{
       res.redirect('/');
   });
 });
-
-
 
 
 

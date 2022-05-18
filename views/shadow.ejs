@@ -7,16 +7,7 @@
         <h1 id="titleShadow">Shadow Work</h1>
         <h2>We all have shadows, <br/> care to see mine?</h2>
 </header>
-<% for(let i = 0; i < list.length; i ++){ %>
-    <h1 id="name"><%=list[i].title%></h1>
-    <div class="container1">
-    <img class="shadowImg" src="<%=list[i].img%>"/>
-    <ul id="info">
-        <li id="aboutImg"><%=list[i].about%></li>
-        <li id="location"><%=list[i].location%></li>
-        <li id="inspo"><%=list[i].inspiration%></li>
-    </ul>
-<% } %>
-</div>
+</body>
+<%- include('../partials/collect.ejs') %>
 </body>
 </html>

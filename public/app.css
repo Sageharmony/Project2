@@ -267,21 +267,39 @@ text-shadow: none;
 #shadowHead{
     margin-left: 3em;
     margin-top: 3em;
-    width: 20em;
+    text-align: right;
+    margin-right: 10em;
 }
-.shadowImg{
-   width: 20em;
-   height: 25em;
-   object-fit: cover;
-}
-.container1{
-    display: flex;
-    flex-wrap: wrap;
-    
-}
+
+
 #info{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
+#grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+.shadowImg{
+padding: .5em;
+  width: 25em;
+  height: 35em;
+  object-fit: cover;
+
+  
+}
+.shadowImg:hover{
+    box-shadow: 2px 1px black;
+
+}
+#name{
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+    text-decoration-color: crimson;
+    padding: .5em;   
+}
