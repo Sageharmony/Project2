@@ -9,7 +9,9 @@ const methodOverride = require('method-override');
 const db = mongoose.connection;
 require('dotenv').config();
 const Data = require('./models/schema');
-const seed = require('./models/seed')
+const seed = require('./models/seed');
+const session = require('express-session');
+const adminController = require('./controllers/admin-controller');
 
 //___________________
 //Port
@@ -48,6 +50,16 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+//allow use of controller 
+
+
+app.use(
+  session({
+    secret: process.env.SECRET, //a random string do not copy this value or your stuff will get hacked
+    resave: false, // default more info: https://www.npmjs.com/package/express-session#resave
+    saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
+  })
+)
 
 app.get('/' , (req, res) => {
   Data.find({}, (err, display) => {
@@ -55,6 +67,7 @@ app.get('/' , (req, res) => {
     { items: display })
   })
 })
+
 
 
 // app.get('/seed', (req, res) => {
@@ -106,6 +119,9 @@ app.get('/film', (req, res) => {
     {list: list})
   })
 })
+app.get('/login', (req, res) => {
+  res.render('login.ejs', {currentUser: req.session.currentUser})
+})
 
 app.post('/', (req, res) => {
   Data.create(req.body, (err, newPost) => {
@@ -125,11 +141,9 @@ app.get('/:id/edit', (req, res) =>{
 })
 app.put('/:id', (req, res) =>{
   Data.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, items) =>{
-    res.redirect('/')
+    res.redirect('/custom')
   })
 })
-
-
 
 app.get('/:id', (req, res) => {
   Data.findById(req.params.id, (error, list) => {
@@ -142,9 +156,15 @@ app.get('/:id', (req, res) => {
   })
 })
 
+app.get('/:id/delete', (req, res) =>{
+  Data.findById(req.params.id, (err, edit) =>{
+    res.render('delete.ejs',
+    {items: edit})
+  })
+})
 app.delete('/:id', (req, res)=>{
   Data.findByIdAndRemove(req.params.id, (err, data)=>{
-      res.redirect('/');
+      res.redirect('/custom');
   });
 });
 

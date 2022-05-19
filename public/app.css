@@ -10,6 +10,17 @@ background-repeat: no-repeat;
  flex-direction: column;
  font-family: 'Bebas Neue', cursive;
 }
+#loginB{
+    text-align: right;
+   margin-top: 4em;
+    margin-right: 5em;
+    margin-bottom: -5em;
+    color: black;
+    font-size: large;
+}
+#loginB:hover{
+    color: crimson;
+}
 p{
     font-family: 'Roboto Flex', sans-serif;
 }
@@ -302,4 +313,11 @@ padding: .5em;
     text-decoration: underline;
     text-decoration-color: crimson;
     padding: .5em;   
+}
+.sign{
+    background-color: white;
+    text-shadow: none;
+}
+.sign:hover{
+    background-color: crimson;
 }

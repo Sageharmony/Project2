@@ -8,7 +8,11 @@
 </head>
 <body>
     <form action="/<%=items.id%>?_method=PUT" method="POST">
-        name:<input type="text" name="title" value="<%=items.name%>">
+        title:<input type="text" name="title" value="<%=items.title%>">
+        img:<input type="text" name="img" value="<%=items.img%>">
+        about:<input type="text" name="about" value="<%=items.about%>">
+        location:<input type="text" name="location" value="<%=items.location%>">
+        inspiration:<input type="text" name="inspiration" value="<%=items.inspiration%>">
         <input type="submit" value="Update"/>
     </form>
 </body>
