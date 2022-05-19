@@ -53,13 +53,12 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //allow use of controller 
 
 
-app.use(
-  session({
-    secret: process.env.SECRET, //a random string do not copy this value or your stuff will get hacked
-    resave: false, // default more info: https://www.npmjs.com/package/express-session#resave
-    saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
-  })
-)
+app.use(session({
+  secret: 'images', 
+  resave: false, 
+  saveUninitialized: false
+}))
+
 
 app.get('/' , (req, res) => {
   Data.find({}, (err, display) => {
