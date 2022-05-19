@@ -301,8 +301,6 @@ padding: .5em;
   width: 25em;
   height: 35em;
   object-fit: cover;
-
-  
 }
 .shadowImg:hover{
     box-shadow: 2px 1px black;
@@ -320,4 +318,10 @@ padding: .5em;
 }
 .sign:hover{
     background-color: crimson;
+}
+#showImg{
+padding: .5em;
+  width: 45em;
+  height: 45em;
+  object-fit: cover;
 }

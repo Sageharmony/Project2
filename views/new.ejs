@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <html lang="en">
+        <%- include('../partials/head.ejs') %>
+
 <body>
+    <%- include('../partials/nav.ejs') %>
     <h1>Add a New Photo</h1>
     <form action="/" method="POST">
+        type: <input type="text" name="type"><br/>
         title: <input type="text" name="title"/><br/>
         img: <input type="text" name="img"/><br/>
         about: <input type="text" name="about"/><br/>
         location: <input type="text" name="location"><br/>
         inspiration: <input type="text" name="inpiration"><br/>
-        price: <input type="number" name="price"/><br/>
         <input type="submit" value="create"/>
     </form>
 </body>

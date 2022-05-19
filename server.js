@@ -12,7 +12,7 @@ const Data = require('./models/schema');
 const seed = require('./models/seed');
 const session = require('express-session');
 const adminController = require('./controllers/admin-controller');
-
+const path = require('path');
 //___________________
 //Port
 //___________________
@@ -50,8 +50,14 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-//allow use of controller 
 
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser){
+    return next()
+  } else {
+    res.redirect('/custom')
+  }
+}
 
 app.use(session({
   secret: 'images', 
@@ -127,12 +133,16 @@ app.post('/', (req, res) => {
     res.redirect('/')
   })
 })
+
+app.get('/add', (req, res) => {
+  res.render('new.ejs')
+})
  
 
 
 
 
-app.get('/:id/edit', (req, res) =>{
+app.get('/:id/edit', isAuthenticated, (req, res) =>{
   Data.findById(req.params.id, (err, edit) =>{
     res.render('edit.ejs',
     {items: edit})
@@ -155,7 +165,7 @@ app.get('/:id', (req, res) => {
   })
 })
 
-app.get('/:id/delete', (req, res) =>{
+app.get('/:id/delete', isAuthenticated, (req, res) =>{
   Data.findById(req.params.id, (err, edit) =>{
     res.render('delete.ejs',
     {items: edit})
