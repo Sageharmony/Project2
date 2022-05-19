@@ -142,7 +142,7 @@ app.get('/add', (req, res) => {
 
 
 
-app.get('/:id/edit', isAuthenticated, (req, res) =>{
+app.get('/:id/edit' , (req, res) =>{
   Data.findById(req.params.id, (err, edit) =>{
     res.render('edit.ejs',
     {items: edit})
@@ -165,7 +165,7 @@ app.get('/:id', (req, res) => {
   })
 })
 
-app.get('/:id/delete', isAuthenticated, (req, res) =>{
+app.get('/:id/delete', (req, res) =>{
   Data.findById(req.params.id, (err, edit) =>{
     res.render('delete.ejs',
     {items: edit})

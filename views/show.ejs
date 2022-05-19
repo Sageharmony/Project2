@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head.ejs') %>
-<body>
+<body id="showPage">
     <%- include('../partials/nav.ejs') %>
 
     <% if(collected.title && collected.about){ %>
+        <div id="imgs">
     <img id="showImg" src="<%=collected.img%>">
+</div>
     <div id="aboutImg">
-    <h1><%=collected.title%></h1>
+    <h1 id="aboutT"><%=collected.title%></h1>
     <h2>About: <%=collected.about%></h2>
     <h2>Where: <%=collected.location%></h2>
     <h2>What inspired this pice: <%=collected.inspiration%></h2>
     <h2>Price: <%=collected.price%></h2>
 </div>
     <% } %>
-
-<a href="/<%=collected.id%>/edit">Edit this posting?</a>
-<a href="/<%=collected.id%>/delete">Remove this posting?</a>
+<div id="udLinks">
+<a id="ud" href="/<%=collected.id%>/edit">Edit this posting?</a>
+<a id="ud" href="/<%=collected.id%>/delete">Remove this posting?</a>
+</div>
 </body>
 </html>
